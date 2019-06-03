@@ -21,8 +21,8 @@ void resetcv() {
 
 void Interface::init(int fileSize, int channels, const Settings& settings, PlayState* state) {
 
-    analogReadRes(ADC_BITS);
-	pinMode(RESET_BUTTON, OUTPUT);
+  analogReadResolution(ADC_BITS);
+  pinMode(RESET_BUTTON, OUTPUT);
 	pinMode(RESET_CV, settings.resetIsOutput ? OUTPUT : INPUT);
 
 	// Add an interrupt on the RESET_CV pin to catch rising edges

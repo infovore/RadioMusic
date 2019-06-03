@@ -2,6 +2,7 @@
 #define AudioEngine_h
 
 #include <Audio.h>
+#include <elapsedMillis.h>
 
 #include "SDPlayPCM.h"
 #include "Settings.h"
@@ -25,7 +26,7 @@ class AudioEngine {
 		AudioEffectFade fade2;
 		AudioMixer4 mixer;
 		AudioAnalyzePeak peak1;
-		AudioOutputAnalog dac1;
+		AudioOutputAnalogStereo dac1;
 		AudioConnection patchCord1;
 		AudioConnection patchCord2;
 		AudioConnection patchCord3;

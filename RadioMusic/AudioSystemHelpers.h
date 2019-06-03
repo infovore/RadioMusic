@@ -2,6 +2,7 @@
 #define AudioSystemHelpers_h
 
 #include <Audio.h>
+#include <elapsedMillis.h>
 #include "RamMonitor.h"
 
 // REBOOT CODES

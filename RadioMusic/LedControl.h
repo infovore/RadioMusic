@@ -1,3 +1,5 @@
+#include <elapsedMillis.h>
+
 #ifndef LedControl_h
 #define LedControl_h
 

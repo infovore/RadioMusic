@@ -4,14 +4,15 @@
 #include "Arduino.h"
 
 #include <Bounce2.h>
+#include <elapsedMillis.h>
 #include "PlayState.h"
 #include "Settings.h"
 #include "AnalogInput.h"
 
-#define CHAN_POT_PIN A9 	// pin for Channel pot
-#define CHAN_CV_PIN A6 		// pin for Channel CV
-#define TIME_POT_PIN A7 	// pin for Time pot
-#define TIME_CV_PIN A8 		// pin for Time CV
+#define CHAN_POT_PIN A5 	// pin for Channel pot
+#define CHAN_CV_PIN A4 		// pin for Channel CV
+#define TIME_POT_PIN A3 	// pin for Time pot
+#define TIME_CV_PIN A2 		// pin for Time CV
 #define RESET_BUTTON 8 		// Reset button
 #define RESET_CV 9 		// Reset pulse input
 

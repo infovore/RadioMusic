@@ -36,7 +36,7 @@
  - Some refactoring and organization of code.
  
  */
-#include <EEPROM.h>
+// #include <EEPROM.h>
 #include <SPI.h>
 #include <SD.h>
 #include <Wire.h>
@@ -48,6 +48,9 @@
 #include "AudioEngine.h"
 #include "Interface.h"
 #include "PlayState.h"
+#include "FlashStorage.h"
+#include <elapsedMillis.h>
+
 
 #ifdef DEBUG
 #define D(x) x
@@ -59,7 +62,6 @@
 //#define RESET_TO_REBOOT
 //#define ENGINE_TEST
 
-#define EEPROM_BANK_SAVE_ADDRESS 0
 
 #define FLASHTIME 	10  	// How long do LEDs flash for?
 #define SHOWFREQ 	250 	// how many millis between serial Debug updates
@@ -85,6 +87,7 @@ boolean flashLeds = false;
 boolean bankChangeMode = false;
 File settingsFile;
 
+FlashStorage(savedBank, int);
 Settings settings("SETTINGS.TXT");
 LedControl ledControl;
 FileScanner fileScanner;
@@ -108,8 +111,8 @@ void setup() {
 	ledControl.single(playState.bank);
 
 	// SD CARD SETTINGS FOR AUDIO SHIELD
-	SPI.setMOSI(7);
-	SPI.setSCK(14);
+	// SPI.setMOSI(7);
+	// SPI.setSCK(14);
 
 	boolean hasSD = openSDCard();
 	if(!hasSD) {
@@ -155,7 +158,7 @@ void setup() {
 void getSavedBankPosition() {
 	// CHECK  FOR SAVED BANK POSITION
 	int a = 0;
-	a = EEPROM.read(EEPROM_BANK_SAVE_ADDRESS);
+	a = savedBank.read();
 	if (a >= 0 && a <= fileScanner.lastBankIndex) {
 		D(
 			Serial.print("Using bank from EEPROM ");
@@ -167,7 +170,7 @@ void getSavedBankPosition() {
 		playState.bank = a;
 		playState.channelChanged = true;
 	} else {
-		EEPROM.write(EEPROM_BANK_SAVE_ADDRESS, 0);
+    savedBank.write(0);
 	};
 }
 
@@ -391,7 +394,7 @@ void nextBank() {
 	);
 
 	meterDisplayDelayTimer = 0;
-	EEPROM.write(EEPROM_BANK_SAVE_ADDRESS, playState.bank);
+	savedBank.write(playState.bank);
 }
 
 #ifdef ENGINE_TEST
