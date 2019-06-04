@@ -13,8 +13,8 @@
 #define CHAN_CV_PIN A4 		// pin for Channel CV
 #define TIME_POT_PIN A3 	// pin for Time pot
 #define TIME_CV_PIN A2 		// pin for Time CV
-#define RESET_BUTTON 8 		// Reset button
-#define RESET_CV 9 		// Reset pulse input
+#define RESET_BUTTON 7 		// Reset button
+#define RESET_CV 5 		// Reset pulse input
 
 #define TIME_POT_CHANGED 	1
 #define TIME_CV_CHANGED 	1 << 1

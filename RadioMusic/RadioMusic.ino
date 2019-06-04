@@ -2,6 +2,23 @@
  RADIO MUSIC
  https://github.com/TomWhitwell/RadioMusic
  
+ ** SAMD51
+ Audio out: Onboard DAC, pin A0
+ 
+ Bank Button: 
+ Bank LEDs 12,11,10,9
+ Reset Button: 7  
+ Reset LED 13 
+ Reset CV input: 5 
+ Channel Pot: A5
+ Channel CV: A4
+ Time Pot: A3
+ Time CV: A2
+ SD Card Connections: 
+ SS   2 
+
+
+ ** LEGACY
  Audio out: Onboard DAC, teensy3.1 pin A14/DAC
  
  Bank Button: 2
@@ -69,6 +86,7 @@
 #define peakFPS 30   //  FRAMERATE FOR PEAK METER
 
 #define SD_CARD_CHECK_DELAY 20
+#define SS 2
 
 // //////////
 // TIMERS

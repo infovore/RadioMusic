@@ -9,11 +9,11 @@
  * 4 LEDs across the top and 1 reset LED.
  *
  */
-#define LED0 6
-#define LED1 5
-#define LED2 4
-#define LED3 3
-#define RESET_LED 11 // Reset LED indicator
+#define LED0 12
+#define LED1 11 
+#define LED2 10 
+#define LED3 9 
+#define RESET_LED 13 // Reset LED indicator
 
 class LedControl {
 
