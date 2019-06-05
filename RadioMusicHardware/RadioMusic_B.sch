@@ -26245,6 +26245,7 @@ Metric Code Size 5664</description>
 <part name="R6" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="10K"/>
 <part name="C17" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="1uF"/>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
+<part name="L1" library="microbuilder" deviceset="INDUCTOR" device="" value="10uH"/>
 </parts>
 <sheets>
 <sheet>
@@ -26483,6 +26484,10 @@ SD-SS
 <attribute name="NAME" x="237.49" y="28.575" size="1.778" layer="95"/>
 <attribute name="VALUE" x="237.49" y="12.7" size="1.778" layer="96"/>
 </instance>
+<instance part="L1" gate="G$1" x="342.9" y="91.44" smashed="yes">
+<attribute name="NAME" x="342.9" y="93.98" size="1.27" layer="95" align="center"/>
+<attribute name="VALUE" x="342.9" y="89.9" size="1.27" layer="96" align="center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -26564,6 +26569,11 @@ SD-SS
 <pinref part="JP1" gate="G$1" pin="1"/>
 <wire x1="162.56" y1="124.46" x2="165.1" y2="124.46" width="0.1524" layer="91"/>
 <label x="162.56" y="124.46" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="322.58" y1="91.44" x2="337.82" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="L1" gate="G$1" pin="1"/>
+<label x="322.58" y="91.44" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="+12V" class="1">
@@ -27180,6 +27190,11 @@ SD-SS
 <pinref part="JP2" gate="A" pin="4"/>
 <wire x1="241.3" y1="17.78" x2="236.22" y2="17.78" width="0.1524" layer="91"/>
 <label x="236.22" y="17.78" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="L1" gate="G$1" pin="2"/>
+<wire x1="347.98" y1="91.44" x2="353.06" y2="91.44" width="0.1524" layer="91"/>
+<label x="353.06" y="91.44" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$3" class="0">
