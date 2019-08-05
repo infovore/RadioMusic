@@ -21,3 +21,8 @@ it.
 
 * designed a new back board based around a SAMD51 (not tested yet).
 
+
+
+## HISTORY
+
+5th August 2019: ordered stencil + Rev A board from JLCPCB; ordered BOM from Mouser
